@@ -7,21 +7,24 @@ import { fetchAPI } from "../../../lib/api";
 
 
 const News = ({ articles, categories, news }) => {
+ 
   return (
     <Layout categories={categories}>
       
       <div className="uk-section">
         <div className="uk-container uk-container-large">
+        <h1>News</h1>
           <Articles articles={articles} />
         </div>
       </div>
     </Layout>
   );
 };
+
 export async function getStaticProps() {
   // Run API calls in parallel
   const [articlesRes, categoriesRes, newsRes] = await Promise.all([
-    fetchAPI("/articles", { populate: ["image", "category"] }),
+    fetchAPI("/articles", { populate: "*" }),
     fetchAPI("/categories", { populate: "*" })
     
   ]);

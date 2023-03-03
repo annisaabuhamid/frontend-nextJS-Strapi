@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import NextImage from "./image";
 
-const Card = ({ article }) => {
+const NewsCard = ({ article }) => {
   return (
    
       
@@ -17,12 +17,7 @@ const Card = ({ article }) => {
               {article.attributes.category.data.attributes.name}
             </p>
             </Link>
-            <p id="title" className="uk-text-large">
-              {article.attributes.title}
-            </p>
-            <p id="title" className="uk-text-large">
-              {article.attributes.content}
-            </p>
+           
           </div>
         </div>
      
@@ -30,4 +25,4 @@ const Card = ({ article }) => {
   );
 };
 
-export default Card;
+export default NewsCard;

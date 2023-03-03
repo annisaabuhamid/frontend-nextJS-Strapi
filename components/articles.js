@@ -1,11 +1,12 @@
 import React from "react";
 import Card from "./card";
+import NewsCard from "./newscard";
 
 const Articles = ({ articles }) => {
   const leftArticlesCount = Math.ceil(articles.length / 5);
   const leftArticles = articles.slice(0, leftArticlesCount);
   const rightArticles = articles.slice(leftArticlesCount, articles.length);
-
+  console.log("t",articles);
   return (
     <div>
       <div className="uk-child-width-1-2@s" data-uk-grid="true">
